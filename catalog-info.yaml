@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: md297dvrp-java-springboot-gitops
+  description: This is GitOps manifest for md297dvrp-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=md297dvrp-java-springboot
+    backstage.io/kubernetes-id: md297dvrp-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: md297dvrp-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:md297dvrp-java-springboot
